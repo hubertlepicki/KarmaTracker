@@ -5,6 +5,9 @@ gem 'rails',     github: 'rails/rails'
 gem 'haml-rails'
 gem 'nokogiri'
 gem 'nori'
+gem 'pg'
+gem 'sequel'
+gem 'sequel-rails', git: 'https://github.com/TalentBox/sequel-rails.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

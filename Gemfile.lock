@@ -40,6 +40,14 @@ GIT
       rdoc (~> 3.4)
       thor (>= 0.17.0, < 2.0)
 
+GIT
+  remote: https://github.com/TalentBox/sequel-rails.git
+  revision: d394a7a16a8b08f569a303ba3abf367382672c75
+  specs:
+    sequel-rails (0.4.0.pre3)
+      railties (>= 3.2.0)
+      sequel (~> 3.28)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -71,6 +79,7 @@ GEM
     multi_json (1.5.1)
     nokogiri (1.5.6)
     nori (2.0.3)
+    pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.11.4)
       coderay (~> 1.0.5)
@@ -82,6 +91,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
+    sequel (3.44.0)
     slop (3.4.3)
     sprockets (2.8.2)
       hike (~> 1.2)
@@ -111,5 +121,8 @@ DEPENDENCIES
   haml-rails
   nokogiri
   nori
+  pg
   pry
   rails!
+  sequel
+  sequel-rails!
