@@ -20,4 +20,18 @@ describe UsersFactory do
     user.name.should == 'Hubert Łępicki'
     user.api_token.should == 'sample_token'
   end
+
+  it 'should initiate user record from a hash of attributes' do
+    user = UsersFactory.new.from_hash({
+      id: 100,
+      email: "hubert.lepicki@example.com",
+      name: "Hubert Łępicki",
+      api_token: "sample_token"
+    }, OpenStruct.public_method(:new))
+
+    user.id.should == 100
+    user.email.should == 'hubert.lepicki@example.com'
+    user.name.should == 'Hubert Łępicki'
+    user.api_token.should == 'sample_token'
+  end
 end

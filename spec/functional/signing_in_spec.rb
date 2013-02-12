@@ -27,4 +27,11 @@ describe 'Signing in (internal API) to tracker' do
       tracker = Tracker.from_email_and_password 'invalid_email', 'invalid_password'
     }.should.raise(AccessDeniedError)
   end
+
+  it 'should persist authorized user record in database' do
+    tracker = Tracker.from_token 'sample_token', TestApiClient.new
+
+    DB[:users].count.should == 1
+  end
 end
+

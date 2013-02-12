@@ -27,7 +27,7 @@ group :test do
 #  gem 'poltergeist', git: "https://github.com/jonleighton/poltergeist.git", require: false
   gem 'database_cleaner', require: false
   gem 'facon', require: false
-#  gem 'nullobject', require: false
+  gem 'nullobject', require: false
 end
 
 group :development, :test do

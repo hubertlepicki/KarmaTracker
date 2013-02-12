@@ -13,6 +13,14 @@ describe User do
     user.email.should == 'hubert.lepicki@example.com'
     user.name.should == 'Hubert Łępicki'
     user.api_token.should == 'sample_token'
+  end
 
+  it 'should have a constructor that sets attributes' do
+    user = User.new(id: 100, email: 'hubert.lepicki@example.com',
+                    name: 'Hubert Łępicki', api_token: 'sample_token')
+    user.id.should == 100
+    user.email.should == 'hubert.lepicki@example.com'
+    user.name.should == 'Hubert Łępicki'
+    user.api_token.should == 'sample_token'
   end
 end

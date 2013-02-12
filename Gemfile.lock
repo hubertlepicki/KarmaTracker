@@ -79,6 +79,7 @@ GEM
     multi_json (1.5.1)
     nokogiri (1.5.6)
     nori (2.0.3)
+    nullobject (0.0.5)
     pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.11.4)
@@ -121,6 +122,7 @@ DEPENDENCIES
   haml-rails
   nokogiri
   nori
+  nullobject
   pg
   pry
   rails!

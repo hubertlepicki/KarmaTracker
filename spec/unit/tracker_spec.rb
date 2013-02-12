@@ -3,6 +3,7 @@
 require_relative '../../app/models/tracker'
 require_relative '../../app/exceptions/access_denied_error'
 require 'facon'
+require 'nullobject'
 
 describe Tracker do
   before do
@@ -16,6 +17,8 @@ describe Tracker do
         "guid" => "sample_token"
       }
     }
+
+    @nullobject = Null::Object.instance
   end
 
   it 'should initiate tracker with user from token' do
@@ -27,7 +30,7 @@ describe Tracker do
     factory = mock('UsersFactory')
     factory.should_receive(:from_api_response).with(@api_response).and_return(user)
 
-    tracker = Tracker.from_token 'foo', client, factory
+    tracker = Tracker.from_token 'foo', client, factory, @nullobject
     tracker.user.should == user
   end
 
@@ -40,7 +43,7 @@ describe Tracker do
     factory = mock('UsersFactory')
     factory.should_receive(:from_api_response).with(@api_response).and_return(user)
 
-    tracker = Tracker.from_email_and_password 'a@b.com', 'f', client, factory
+    tracker = Tracker.from_email_and_password 'a@b.com', 'f', client, factory, @nullobject
     tracker.user.should == user
 
   end
