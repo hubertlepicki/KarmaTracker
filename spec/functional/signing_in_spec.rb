@@ -2,6 +2,8 @@ require_relative './functional_helper'
 require_relative '../support/test_api_client'
 
 describe 'Signing in (internal API) to tracker' do
+  before { setup }
+
   it 'should authorize user by valid token' do
     tracker = Tracker.from_token 'sample_token', TestApiClient.new
     tracker.user.id.should == 100
@@ -32,6 +34,14 @@ describe 'Signing in (internal API) to tracker' do
     tracker = Tracker.from_token 'sample_token', TestApiClient.new
 
     DB[:users].count.should == 1
+  end
+
+  it 'should authorize user by id (i.e. on following requests after sign in)' do
+    factorize(:user)
+
+    tracker = Tracker.from_id 1
+    tracker.user.id.should == 1
+    tracker.user.email.should == 'hubert.lepicki@example.com'
   end
 end
 

@@ -20,6 +20,10 @@ class Tracker
     user.tap { users_repo.persist user }
   end
 
+  def self.from_id(id, users_repo = UsersRepository.new)
+    new users_repo.find(id)
+  end
+
   def initialize(user)
     @user = user
   end

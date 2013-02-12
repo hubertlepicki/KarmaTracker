@@ -45,14 +45,23 @@ describe Tracker do
 
     tracker = Tracker.from_email_and_password 'a@b.com', 'f', client, factory, @nullobject
     tracker.user.should == user
+  end
 
+  it 'should initiate tracker with user from id' do
+    user = mock('User')
+
+    repo = mock('UsersRepository')
+    repo.should_receive(:find).with(1).and_return(user)
+
+    tracker = Tracker.from_id 1, repo
+    tracker.user.should == user
   end
 
   it 'should raise AccessDeniedError when cannot find user' do
     ->() {
       client = mock('ApiClient')
       client.should_receive(:get_user_by_email_and_password).with('a@b.com', 'f').and_return nil
-      tracker = Tracker.from_email_and_password 'a@b.com', 'f', client, nil
+      tracker = Tracker.from_email_and_password 'a@b.com', 'f', client, nil, nil
     }.should.raise(AccessDeniedError)
   end
 end
