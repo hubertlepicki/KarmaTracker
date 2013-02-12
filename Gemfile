@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails',     github: 'rails/rails'
 
 gem 'haml-rails'
+gem 'nokogiri'
+gem 'nori'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,7 +23,7 @@ group :test do
 #  gem 'capybara', '2.0.2', require: false
 #  gem 'poltergeist', git: "https://github.com/jonleighton/poltergeist.git", require: false
   gem 'database_cleaner', require: false
-#  gem 'facon', require: false
+  gem 'facon', require: false
 #  gem 'nullobject', require: false
 end
 

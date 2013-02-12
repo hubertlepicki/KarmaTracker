@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person>
+  <id type="integer">100</id>
+  <email>hubert.lepicki@example.com</email>
+  <name>Hubert &#321;&#281;picki</name>
+  <initials>H&#321;</initials>
+  <token>
+    <id type="integer">1</id>
+    <guid>sample_token</guid>
+  </token>
+</person>
